@@ -123,6 +123,8 @@ var dishesArray = [
     }
 ]
 
+var selectedMenus = [];
+
 const calculateDishPrice = ( dishName ) => {
     console.log(dishName)
 
@@ -179,13 +181,28 @@ const printMenus = ()=>{
                 <p class="card-text">${dish.description}</p>
                 <div class="d-flex justify-content-between">
                     <h3>$${calculateDishPrice(dish.name)}.00</h3>
-                    <button id="saveData" type="button" class="added">Agregar al carrito</button>
+                    <button type="button" class="added">Agregar al carrito</button>
                 </div>
 
             </div>
         </div>
     </div>`)
     })
+    $(".added").on('click',addMenu)
+
 }
+
+const addMenu = (event) => {
+    let menuName = $(event.target).closest('.card-body').children('.card-title').text()
+    selectedMenus.push(menuName)
+    console.log(selectedMenus)
+}
+
+
+
+
+
+
+
 printMenus()
 
