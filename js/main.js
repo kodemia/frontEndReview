@@ -168,13 +168,14 @@ $("#buttonS").click(()=>{
 })
 
 const printMenus = ()=>{
+    $("#dishes-wrapper" ).empty()
     dishesArray.forEach((dish,index) =>{
         $("#dishes-wrapper").append(`<div class="col mb-4">
         <div class="card">
             <img class="fitness" src="https://i.ytimg.com/vi/fMmLYlZnRs4/maxresdefault.jpg" class="card-img-top"
                 alt="...">
             <div class="card-body">
-                <h5 class="card-title">Platillo 1</h5>
+                <h5 class="card-title">${dish.name}</h5>
                 <p class="card-text">Excelente platillo confomado por hortalizas de cactus, en corte juliana
                     acompañada con fina cebolla de los pirineos finamente cortada en pluma, con un toque de sal
                     del himalaya, finas hierbas y en adicional podrian escoger una salsa esmeralda </p>
@@ -189,5 +190,5 @@ const printMenus = ()=>{
     </div>`)
     })
 }
-
 printMenus()
+
