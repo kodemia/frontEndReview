@@ -1,0 +1,59 @@
+.buy{
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -3px 3px 3px gray;
+    background-color: orangered;
+    color: white;
+    
+}
+.added{
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -3px 3px 3px gray;
+    background-color: orangered;
+    color: white;
+    
+}
+.navbar{
+    background-color: rgba(49, 43, 43, 0.863);
+    background-attachment: fixed;    
+}
+
+.fitness{
+    object-fit:cover;
+    width: auto;
+    height: 200px;
+}
+.text{
+    background-color: rgba(255, 255, 255, 0.774);
+    
+}
+.homes{
+    color: white;
+}
+ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+li{
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: orangered;
+    
+}
+.final{
+    
+}
+
+#hand{
+    position: relative;
+    width: 200px;
+    top: 100px;
+    left: 750px
+}

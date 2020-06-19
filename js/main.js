@@ -35,7 +35,10 @@ var productsArray = [
 var dishesArray = [
     {
         name:"Platillo 1",
-        imgUrl:"",
+        imgUrl:"https://i.ytimg.com/vi/fMmLYlZnRs4/maxresdefault.jpg",
+        description: `Excelente platillo confomado por hortalizas de cactus, en corte juliana
+        acompañada con fina cebolla de los pirineos finamente cortada en pluma, con un toque de sal
+        del himalaya, finas hierbas y en adicional podrian escoger una salsa esmeralda `,
         ingredients:[
             {
                 name:"nopal",
@@ -51,7 +54,11 @@ var dishesArray = [
         ]
     },{
         name:"Platillo 2",
-        imgUrl:"",
+        imgUrl:"https://d1nsq2txwd94q7.cloudfront.net/public/files/production/recipes/images/521/fancy/r_521_1550837766.jpg",
+        description: `Excelente platillo en base de tuberculos elaborado y ahumado con cebollas
+        cosechadas a 1200mts sobre el nivel del rio nilo, acompañada de finas hierbas importadas de
+        los alpes suizos, condimentada con fina sal de mar muerto. Se puede acompañar con crocantes
+        de maiz.`,
         ingredients:[
             {
                 name:"sal",
@@ -66,7 +73,11 @@ var dishesArray = [
         ]
     },{
         name:"Platillo 3",
-        imgUrl:"",
+        imgUrl:"https://www.mexicoenmicocina.com/wp-content/uploads/2018/03/nopales-a-la-mexicana-5-500x427.jpg",
+        description: `Excelente platillo elaborado por personas campesinas y rupestres, dedicados
+        a la cosecha de hortaliza de cactus, fina cebolla campestre , y jitomate balsamico en
+        concase y cortado en petite broune para mayor satisfaccion a tu paladar. Puede ser usado
+        como salsa coloquial en crocantes de algun proucto carnico o costra de puerco.`,
         ingredients:[
             {
                 name:"nopal",
@@ -85,7 +96,11 @@ var dishesArray = [
         ]
     },{
         name:"Platillo 4",
-        imgUrl:"",
+        imgUrl:"https://recetasveggie.com/wp-content/uploads/2013/10/IMG_2039.jpg",
+        description:`EL ARTE DE LA CASA: un platillo a base de cortes finos de legumbres,
+        hortalizas,tuberculos y verduras, deleita tu paladar con la fusion de nuestros platillos
+        elaborados por el mejor chef de la casa, sazonado con los mejores condimentos conocidos por
+        la cocina francesa, deleita tu paladar al probarlo con nuestra salsa de la casa.`,
         ingredients:[
             {
                 name:"nopal",
@@ -147,40 +162,32 @@ const calculateDishPrice = ( dishName ) => {
 calculateDishPrice("Platillo 3")
 
 
+$("#buttonS").click(()=>{
+    $('#exampleModal').modal('hide')
+    
+})
 
+const printMenus = ()=>{
+    dishesArray.forEach((dish,index) =>{
+        $("#dishes-wrapper").append(`<div class="col mb-4">
+        <div class="card">
+            <img class="fitness" src="https://i.ytimg.com/vi/fMmLYlZnRs4/maxresdefault.jpg" class="card-img-top"
+                alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Platillo 1</h5>
+                <p class="card-text">Excelente platillo confomado por hortalizas de cactus, en corte juliana
+                    acompañada con fina cebolla de los pirineos finamente cortada en pluma, con un toque de sal
+                    del himalaya, finas hierbas y en adicional podrian escoger una salsa esmeralda </p>
+                <div class="d-flex justify-content-between">
+                    <h3>$439.99</h3>
+                    <button id="saveData" type="button" class="added" data-toggle="modal"
+                    data-target="#exampleModal">Agregar al carrito</button>
+                </div>
 
-
-
-/*
-const calculateDishPrice = ( dishName ) => {
-    let selectedDish = dishesArray.filter( dish => {
-        return dish.name === dishName
+            </div>
+        </div>
+    </div>`)
     })
-
-    console.log(selectedDish[0])
-
-    let dishIngredients = selectedDish[0].ingredients
-    console.log(dishIngredients)
-
-    let result = dishIngredients.reduce( (totalPrice, ingredient) => {
-        console.log(ingredient)
-        let {name, neededGrams} = ingredient;
-        let ingredientData = productsArray.filter( product => {
-            return product.name === name
-        })
-        console.log('needed Grams', neededGrams)
-        console.log('presentation grams', ingredientData[0].grams)
-
-        let productsNeeded = neededGrams / ingredientData[0].grams
-        let productPrice = productsNeeded * ingredientData[0].price
-        console.log('products needed', productsNeeded)
-        console.log('unit price', ingredientData[0].price )
-        console.log('product price', productPrice)
-
-        return totalPrice += productPrice
-    },0) 
-
-    return result
 }
-*/
-//calculateDishPrice("Platillo 4")
+
+printMenus()
