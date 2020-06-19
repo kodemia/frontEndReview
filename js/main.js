@@ -179,8 +179,7 @@ const printMenus = ()=>{
                 <p class="card-text">${dish.description}</p>
                 <div class="d-flex justify-content-between">
                     <h3>$${calculateDishPrice(dish.name)}.00</h3>
-                    <button id="saveData" type="button" class="added" data-toggle="modal"
-                    data-target="#exampleModal">Agregar al carrito</button>
+                    <button id="saveData" type="button" class="added">Agregar al carrito</button>
                 </div>
 
             </div>
