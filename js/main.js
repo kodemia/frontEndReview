@@ -172,13 +172,11 @@ const printMenus = ()=>{
     dishesArray.forEach((dish,index) =>{
         $("#dishes-wrapper").append(`<div class="col mb-4">
         <div class="card">
-            <img class="fitness" src="https://i.ytimg.com/vi/fMmLYlZnRs4/maxresdefault.jpg" class="card-img-top"
+            <img class="fitness" src="${dish.imgUrl}" class="card-img-top"
                 alt="...">
             <div class="card-body">
                 <h5 class="card-title">${dish.name}</h5>
-                <p class="card-text">Excelente platillo confomado por hortalizas de cactus, en corte juliana
-                    acompañada con fina cebolla de los pirineos finamente cortada en pluma, con un toque de sal
-                    del himalaya, finas hierbas y en adicional podrian escoger una salsa esmeralda </p>
+                <p class="card-text">${dish.description}</p>
                 <div class="d-flex justify-content-between">
                     <h3>$439.99</h3>
                     <button id="saveData" type="button" class="added" data-toggle="modal"
