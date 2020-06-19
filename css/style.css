@@ -63,4 +63,8 @@ li {
   top: 100px;
   left: 750px;
 }
+
+#totalPrice {
+  background-color: rgba(53, 151, 53, 0.507);
+}
 /*# sourceMappingURL=style.css.map */
