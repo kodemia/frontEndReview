@@ -234,6 +234,11 @@ const printCard = () => {
           </div>
       </div>`);
   });
+  let totalPrice = selectedMenus.reduce((acumm,value)=>{
+     acumm+=calculateDishPrice(value)
+     return acumm
+  },0)
+  $("#dishes-wrapper").append(`<div class="font-italic text-right font-weight-bold mt-3">Total: $${totalPrice}.00</div>`)
 };
 
 printMenus();
