@@ -173,9 +173,9 @@ const calculateDishPrice = (dishName) => {
 
 calculateDishPrice("Platillo 3");
 
-$("#buttonS").click(() => {
+/*$("#buttonS").click(() => {
     $("#exampleModal").modal("hide");
-});
+});*/
 
 const printMenus = () => {
     $("#dishes-wrapper").empty();
@@ -233,10 +233,23 @@ const printCard = () => {
     $("#dishes-wrapper").append(`<div class="font-italic text-right font-weight-bold mt-3">Total: $${totalPrice}.00</div>`)
 };
 
-printMenus();
-
 const uploadOrder = () => {
     var orderObject = { totalPrice: totalPrice, selectedMenus }
     console.log(orderObject)
-
+    $.post( 
+        "https://ajaxclass-1ca34.firebaseio.com/mentorsTeam/pedidos/.json",
+        JSON.stringify(orderObject), 
+        function( data ) {
+            $(".order-id").text(data.name)
+            $("#confirmModal").modal("show");
+            console.log(data)
+    });
 }
+
+
+
+https://ajaxclass-1ca34.firebaseio.com/mentorsTeam/pedidos/.json
+
+
+printMenus();
+
